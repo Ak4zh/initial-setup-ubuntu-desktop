@@ -43,6 +43,9 @@ echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=
 sudo apt update
 sudo apt install brave-browser
 
+# create brave extention dir
+sudo mkdir /opt/brave.com/brave/extensions
+
 # install extensions
 install_chrome_extension "cmedhionkhpnakcndndgjdbohmhepckk" "Adblock for Youtube"
 install_chrome_extension "mnjggcdmjocbbbhaepdhchncahnbgone" "SponsorBlock for YouTube - Skip Sponsorships"
