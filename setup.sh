@@ -1,6 +1,7 @@
 #!/bin/bash
 
 sudo apt update
+sudo apt install git -y
 
 #####################################
 # install and setup zsh + oh-my-zsh #
