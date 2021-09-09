@@ -17,10 +17,25 @@ sudo add-apt-repository universe
 sudo apt install gnome-tweak-tool
 gsettings set org.gnome.desktop.interface text-scaling-factor 1.35
 
-###################
-# extra utilities #
-###################
-sudo snap install flameshot  # better screenshot and screen slipping
+######################################################################
+# install flameshot - Powerful yet simple to use screenshot software #
+######################################################################
+sudo snap install flameshot
+
+# Release the PrtScr binding by this command:
+gsettings set org.gnome.settings-daemon.plugins.media-keys screenshot '[]'
+
+# Set new custom binding
+gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']"
+
+# Set name
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name 'flameshot'
+
+# Set command
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command '/usr/bin/flameshot gui'
+
+# Set binding
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding 'Print'
 
 ############################################
 # install brave and some useful extensions #
