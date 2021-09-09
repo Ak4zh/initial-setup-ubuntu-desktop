@@ -25,7 +25,7 @@ sudo snap install brave
 sudo snap install htop
 sudo snap install node --classic
 sudo snap install pycharm-professional --classic
-sudo snap install --classic code
+sudo snap install --classic codium  # VS Code without MS branding/telemetry/licensing
 
 #####################################
 # install docker and socker-compose #
