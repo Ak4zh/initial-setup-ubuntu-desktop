@@ -111,7 +111,7 @@ install_chrome_extension "jlmpjdjjbgclbocgajdjefcidcncaied" "daily.dev | The Hom
 
 # install Cloudflare Cloud Wrap
 curl https://pkg.cloudflareclient.com/pubkey.gpg | sudo apt-key add -
-echo 'deb http://pkg.cloudflareclient.com/ $(lsb_release -cs) main' | sudo tee /etc/apt/sources.list.d/cloudflare-client.list
+echo "deb http://pkg.cloudflareclient.com/ $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/cloudflare-client.list
 sudo apt update
 sudo apt install cloudflare-warp
 warp-cli register
