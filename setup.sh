@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo apt update
-sudo apt install git -y
+sudo apt install -y git htop bpytop nodejs npm
 
 ############################
 # remove ubuntu annoyances #
@@ -21,14 +21,15 @@ sudo apt update && sudo apt install --yes telegram
 ####################
 # social snap apps #
 ####################
-sudo snap install --yes --classic slack
-sudo snap install --yes discord
-sudo snap install --yes htop
-sudo apt install --yes bpytop
-sudo snap install --yes --classic node
-sudo snap install --classic --yes pycharm-professional
-sudo snap install --classic codium  # VS Code without MS branding/telemetry/licensing
+# sudo snap install --yes --classic slack
+# sudo snap install --yes discord
+# sudo snap install --classic --yes pycharm-professional
+# sudo snap install --classic codium  # VS Code without MS branding/telemetry/licensing
 
+flatpak install -y flathub com.slack.Slack
+flatpak install -y flathub com.discordapp.Discord
+flatpak install -y flathub com.jetbrains.PyCharm-Professional
+flatpak install -y flathub com.vscodium.codium
 #####################################
 # install docker and socker-compose #
 #####################################
