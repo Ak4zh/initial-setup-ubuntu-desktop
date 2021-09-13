@@ -6,7 +6,7 @@ sudo apt install git -y
 ############################
 # remove ubuntu annoyances #
 ############################
-sudo apt remove apport apport-gtk  # crash report
+sudo apt remove --yes apport apport-gtk  # crash report
 
 #####################################
 # install and setup zsh + oh-my-zsh #
