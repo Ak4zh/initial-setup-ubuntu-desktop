@@ -15,14 +15,18 @@ sudo apt remove apport apport-gtk  # crash report
 # cd quickz-sh
 # ./quickz.sh -c        # only run with '-c' the first time, running multiple times will duplicate history entries
 
+sudo add-apt-repository ppa:atareao/telegram
+sudo apt update && sudo apt install telegram
+
 ####################
 # social snap apps #
 ####################
-sudo snap install telegram-desktop
+# sudo snap install telegram-desktop
 sudo snap install slack --classic
 sudo snap install discord
-sudo snap install brave
+# sudo snap install brave
 sudo snap install htop
+sudo apt install bpytop
 sudo snap install node --classic
 sudo snap install pycharm-professional --classic
 sudo snap install --classic codium  # VS Code without MS branding/telemetry/licensing
@@ -90,11 +94,11 @@ install_chrome_extension () {
 }
 
 # install brave
-# sudo apt install apt-transport-https curl
-# sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
-# echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-# sudo apt update
-# sudo apt install brave-browser
+sudo apt install apt-transport-https curl
+sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+sudo apt update
+sudo apt install brave-browser
 
 # create brave extention dir
 sudo mkdir /opt/brave.com/brave/extensions
