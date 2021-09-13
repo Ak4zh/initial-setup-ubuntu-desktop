@@ -109,8 +109,11 @@ install_chrome_extension "cjpalhdlnbpafiamejdnhcphjbkeiagm" "uBlock Origin"
 install_chrome_extension "nngceckbapebfimnlniiiahkandclblb" "Bitwarden - Free Password Manager"
 install_chrome_extension "fjdmkanbdloodhegphphhklnjfngoffa" "Auto HD/4k/8k for YouTube™ - YouTube™ Auto HD"
 install_chrome_extension "dkckaoghoiffdbomfbbodbbgmhjblecj" "Xtreme Download Manager"
-install_chrome_extension "kbfnbcaeplbcioakkpcpgfkobkghlhen" "Grammarly for Chrome"
+# install_chrome_extension "kbfnbcaeplbcioakkpcpgfkobkghlhen" "Grammarly for Chrome"
+# grammerly open-source alternative
+install_chrome_extension "oldceeleldhonbafppcapldpdifcinji" "Grammar and Spell Checker — LanguageTool"
 install_chrome_extension "jlmpjdjjbgclbocgajdjefcidcncaied" "daily.dev | The Homepage Developers Deserve"
+
 
 # install Cloudflare Cloud Wrap
 curl https://pkg.cloudflareclient.com/pubkey.gpg | sudo apt-key add -
