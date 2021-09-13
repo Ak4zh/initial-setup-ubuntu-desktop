@@ -21,14 +21,12 @@ sudo apt update && sudo apt install --yes telegram
 ####################
 # social snap apps #
 ####################
-# sudo snap install telegram-desktop
-sudo snap install slack --classic
-sudo snap install discord
-# sudo snap install brave
-sudo snap install htop
+sudo snap install --yes --classic slack
+sudo snap install --yes discord
+sudo snap install --yes htop
 sudo apt install --yes bpytop
-sudo snap install node --classic
-sudo snap install pycharm-professional --classic
+sudo snap install --yes --classic node
+sudo snap install --classic --yes pycharm-professional
 sudo snap install --classic codium  # VS Code without MS branding/telemetry/licensing
 
 #####################################
@@ -115,9 +113,11 @@ install_chrome_extension "jlmpjdjjbgclbocgajdjefcidcncaied" "daily.dev | The Hom
 
 # install Cloudflare Cloud Wrap
 curl https://pkg.cloudflareclient.com/pubkey.gpg | sudo apt-key add -
-echo "deb http://pkg.cloudflareclient.com/ $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/cloudflare-client.list
+echo 'deb http://pkg.cloudflareclient.com/ focal main' | sudo tee /etc/apt/sources.list.d/cloudflare-client.list
 sudo apt update
 sudo apt install cloudflare-warp
 warp-cli register
 warp-cli connect
 warp-cli enable-always-on
+
+sudo apt autoremove
