@@ -15,8 +15,8 @@ sudo apt remove apport apport-gtk  # crash report
 # cd quickz-sh
 # ./quickz.sh -c        # only run with '-c' the first time, running multiple times will duplicate history entries
 
-sudo add-apt-repository ppa:atareao/telegram
-sudo apt update && sudo apt install telegram
+sudo add-apt-repository --yes ppa:atareao/telegram
+sudo apt update && sudo apt install --yes telegram
 
 ####################
 # social snap apps #
@@ -26,7 +26,7 @@ sudo snap install slack --classic
 sudo snap install discord
 # sudo snap install brave
 sudo snap install htop
-sudo apt install bpytop
+sudo apt install --yes bpytop
 sudo snap install node --classic
 sudo snap install pycharm-professional --classic
 sudo snap install --classic codium  # VS Code without MS branding/telemetry/licensing
@@ -35,7 +35,7 @@ sudo snap install --classic codium  # VS Code without MS branding/telemetry/lice
 # install docker and socker-compose #
 #####################################
 sudo apt-get update
-sudo apt-get install \
+sudo apt-get --yes install \
     apt-transport-https \
     ca-certificates \
     curl \
@@ -46,7 +46,7 @@ echo \
   "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io
+sudo apt-get install --yes docker-ce docker-ce-cli containerd.io
 
 # docker-compose
 sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
@@ -55,14 +55,14 @@ sudo chmod +x /usr/local/bin/docker-compose
 ###################################################
 # install gnome-tweaks-tool and set font scalling #
 ###################################################
-sudo add-apt-repository universe
-sudo apt install gnome-tweak-tool
+sudo add-apt-repository --yes universe
+sudo apt install --yes gnome-tweak-tool
 gsettings set org.gnome.desktop.interface text-scaling-factor 1.35
 
 ######################################################################
 # install flameshot - Powerful yet simple to use screenshot software #
 ######################################################################
-sudo snap install flameshot
+sudo snap install --yes flameshot
 
 # Release the PrtScr binding by this command:
 gsettings set org.gnome.settings-daemon.plugins.media-keys screenshot '[]'
@@ -94,11 +94,11 @@ install_chrome_extension () {
 }
 
 # install brave
-sudo apt install apt-transport-https curl
+sudo apt install --yes pt-transport-https curl
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 sudo apt update
-sudo apt install brave-browser
+sudo apt install --yes brave-browser
 
 # create brave extention dir
 sudo mkdir /opt/brave.com/brave/extensions
