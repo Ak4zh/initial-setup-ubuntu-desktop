@@ -2,6 +2,7 @@
 
 sudo apt update
 sudo apt install -y git htop bpytop nodejs npm
+mkdir Applications
 
 ############################
 # remove ubuntu annoyances #
@@ -26,10 +27,32 @@ sudo apt update && sudo apt install --yes telegram
 # sudo snap install --classic --yes pycharm-professional
 # sudo snap install --classic codium  # VS Code without MS branding/telemetry/licensing
 
-flatpak install -y flathub com.slack.Slack
-flatpak install -y flathub com.discordapp.Discord
-flatpak install -y flathub com.jetbrains.PyCharm-Professional
-flatpak install -y flathub com.vscodium.codium
+# flatpak install -y flathub com.slack.Slack
+# flatpak install -y flathub com.discordapp.Discord
+# flatpak install -y flathub com.jetbrains.PyCharm-Professional
+# flatpak install -y flathub com.vscodium.codium
+
+wget https://downloads.slack-edge.com/linux_releases/slack-desktop-4.19.2-amd64.deb
+sudo apt install ./slack-desktop-*.deb
+sudo rm ./slack-desktop-*.deb
+
+wget https://dl.discordapp.net/apps/linux/0.0.15/discord-0.0.15.deb
+sudo apt install ./discord-*.deb
+sudo rm ./discord-*.deb
+
+wget https://download-cdn.jetbrains.com/python/pycharm-professional-2021.2.2.tar.gz
+tar -xzf pycharm-professional-*.tar.gz -C ~/Applications/
+sh ~/Applications/pycharm-professional-*/bin/pycharm.sh
+sudo rm ./pycharm-professional-*.tar.gz
+
+wget https://download.nomachine.com/download/7.6/Linux/nomachine_7.6.2_4_amd64.deb
+sudo apt install ./nomachine_*.deb
+sudo rm ./nomachine_*.deb
+
+wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg | gpg --dearmor | sudo dd of=/usr/share/keyrings/vscodium-archive-keyring.gpg
+echo 'deb [ signed-by=/usr/share/keyrings/vscodium-archive-keyring.gpg ] https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/debs vscodium main' | sudo tee /etc/apt/sources.list.d/vscodium.list
+sudo apt update && sudo apt install codium
+
 #####################################
 # install docker and socker-compose #
 #####################################
@@ -56,12 +79,12 @@ sudo chmod +x /usr/local/bin/docker-compose
 ###################################################
 sudo add-apt-repository --yes universe
 sudo apt install --yes gnome-tweak-tool
-gsettings set org.gnome.desktop.interface text-scaling-factor 1.35
+gsettings set org.gnome.desktop.interface text-scaling-factor '1.35'
 
 ######################################################################
 # install flameshot - Powerful yet simple to use screenshot software #
 ######################################################################
-sudo snap install --yes flameshot
+sudo apt install --yes flameshot
 
 # Release the PrtScr binding by this command:
 gsettings set org.gnome.settings-daemon.plugins.media-keys screenshot '[]'
@@ -103,6 +126,7 @@ sudo apt install --yes brave-browser
 sudo mkdir /opt/brave.com/brave/extensions
 
 # install extensions
+install_chrome_extension "aapbdbdomjkkjkaonfhkkikfgjllcleb" "Google Translate"
 install_chrome_extension "cmedhionkhpnakcndndgjdbohmhepckk" "Adblock for Youtube"
 install_chrome_extension "mnjggcdmjocbbbhaepdhchncahnbgone" "SponsorBlock for YouTube - Skip Sponsorships"
 install_chrome_extension "cjpalhdlnbpafiamejdnhcphjbkeiagm" "uBlock Origin"
@@ -113,7 +137,8 @@ install_chrome_extension "dkckaoghoiffdbomfbbodbbgmhjblecj" "Xtreme Download Man
 # grammerly open-source alternative
 install_chrome_extension "oldceeleldhonbafppcapldpdifcinji" "Grammar and Spell Checker — LanguageTool"
 install_chrome_extension "jlmpjdjjbgclbocgajdjefcidcncaied" "daily.dev | The Homepage Developers Deserve"
-
+install_chrome_extension "cidlcjdalomndpeagkjpnefhljffbnlo" "Toggle JavaScript"
+install_chrome_extension "bhlhnicpbhignbdhedgjhgdocnmhomnp" "ColorZilla"
 
 # install Cloudflare Cloud Wrap
 curl https://pkg.cloudflareclient.com/pubkey.gpg | sudo apt-key add -
