@@ -2,7 +2,7 @@
 
 sudo apt update
 sudo apt install -y git htop bpytop nodejs npm
-mkdir Applications
+mkdir ~/Applications
 
 ############################
 # remove ubuntu annoyances #
@@ -33,25 +33,25 @@ sudo apt update && sudo apt install --yes telegram
 # flatpak install -y flathub com.vscodium.codium
 
 wget https://downloads.slack-edge.com/linux_releases/slack-desktop-4.19.2-amd64.deb
-sudo apt install ./slack-desktop-*.deb
+sudo apt install --yes ./slack-desktop-*.deb
 sudo rm ./slack-desktop-*.deb
 
 wget https://dl.discordapp.net/apps/linux/0.0.15/discord-0.0.15.deb
-sudo apt install ./discord-*.deb
+sudo apt install --yes ./discord-*.deb
 sudo rm ./discord-*.deb
 
 wget https://download-cdn.jetbrains.com/python/pycharm-professional-2021.2.2.tar.gz
 tar -xzf pycharm-professional-*.tar.gz -C ~/Applications/
-sh ~/Applications/pycharm-professional-*/bin/pycharm.sh
+sh ~/Applications/pycharm-professional-*/bin/pycharm.sh &
 sudo rm ./pycharm-professional-*.tar.gz
 
 wget https://download.nomachine.com/download/7.6/Linux/nomachine_7.6.2_4_amd64.deb
-sudo apt install ./nomachine_*.deb
+sudo apt install --yes ./nomachine_*.deb
 sudo rm ./nomachine_*.deb
 
 wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg | gpg --dearmor | sudo dd of=/usr/share/keyrings/vscodium-archive-keyring.gpg
 echo 'deb [ signed-by=/usr/share/keyrings/vscodium-archive-keyring.gpg ] https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/debs vscodium main' | sudo tee /etc/apt/sources.list.d/vscodium.list
-sudo apt update && sudo apt install codium
+sudo apt update && sudo apt install --yes codium
 
 #####################################
 # install docker and socker-compose #
