@@ -1,6 +1,7 @@
 #!/bin/bash
 
 sudo apt update
+sudo apt install -y ubuntu-restricted-extras
 sudo apt install -y git htop bpytop nodejs npm
 mkdir ~/Applications
 
@@ -144,9 +145,9 @@ install_chrome_extension "bhlhnicpbhignbdhedgjhgdocnmhomnp" "ColorZilla"
 curl https://pkg.cloudflareclient.com/pubkey.gpg | sudo apt-key add -
 echo 'deb http://pkg.cloudflareclient.com/ focal main' | sudo tee /etc/apt/sources.list.d/cloudflare-client.list
 sudo apt update
-sudo apt install cloudflare-warp
+sudo apt install -y cloudflare-warp
 warp-cli register
 warp-cli connect
 warp-cli enable-always-on
 
-sudo apt autoremove
+sudo apt autoremove -y
