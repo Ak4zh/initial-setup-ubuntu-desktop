@@ -13,12 +13,20 @@ sudo apt remove --yes apport apport-gtk  # crash report
 #####################################
 # install and setup zsh + oh-my-zsh #
 #####################################
-# git clone https://github.com/jotyGill/quickz-sh.git
-# cd quickz-sh
-# ./quickz.sh -c        # only run with '-c' the first time, running multiple times will duplicate history entries
+git clone https://github.com/jotyGill/quickz-sh.git
+cd quickz-sh
+./quickz.sh -c        # only run with '-c' the first time, running multiple times will duplicate history entries
 
-sudo add-apt-repository --yes ppa:atareao/telegram
-sudo apt update && sudo apt install --yes telegram
+# sudo add-apt-repository --yes ppa:atareao/telegram
+# sudo apt update && sudo apt install --yes telegram
+
+# wget https://downloads.slack-edge.com/linux_releases/slack-desktop-4.19.2-amd64.deb
+# sudo apt install --yes ./slack-desktop-*.deb
+# sudo rm ./slack-desktop-*.deb
+
+# wget https://dl.discordapp.net/apps/linux/0.0.15/discord-0.0.15.deb
+# sudo apt install --yes ./discord-*.deb
+# sudo rm ./discord-*.deb
 
 ####################
 # social snap apps #
@@ -33,29 +41,21 @@ sudo apt update && sudo apt install --yes telegram
 # flatpak install -y flathub com.jetbrains.PyCharm-Professional
 # flatpak install -y flathub com.vscodium.codium
 
-wget https://downloads.slack-edge.com/linux_releases/slack-desktop-4.19.2-amd64.deb
-sudo apt install --yes ./slack-desktop-*.deb
-sudo rm ./slack-desktop-*.deb
-
-wget https://dl.discordapp.net/apps/linux/0.0.15/discord-0.0.15.deb
-sudo apt install --yes ./discord-*.deb
-sudo rm ./discord-*.deb
-
 wget https://download-cdn.jetbrains.com/python/pycharm-professional-2021.2.2.tar.gz
 tar -xzf pycharm-professional-*.tar.gz -C ~/Applications/
 sh ~/Applications/pycharm-professional-*/bin/pycharm.sh &
 sudo rm ./pycharm-professional-*.tar.gz
 
-wget https://download.nomachine.com/download/7.6/Linux/nomachine_7.6.2_4_amd64.deb
-sudo apt install --yes ./nomachine_*.deb
-sudo rm ./nomachine_*.deb
+# wget https://download.nomachine.com/download/7.6/Linux/nomachine_7.6.2_4_amd64.deb
+# sudo apt install --yes ./nomachine_*.deb
+# sudo rm ./nomachine_*.deb
 
 wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg | gpg --dearmor | sudo dd of=/usr/share/keyrings/vscodium-archive-keyring.gpg
 echo 'deb [ signed-by=/usr/share/keyrings/vscodium-archive-keyring.gpg ] https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/debs vscodium main' | sudo tee /etc/apt/sources.list.d/vscodium.list
 sudo apt update && sudo apt install --yes codium
 
 #####################################
-# install docker and socker-compose #
+# install docker and docker-compose #
 #####################################
 sudo apt-get update
 sudo apt-get --yes install \
