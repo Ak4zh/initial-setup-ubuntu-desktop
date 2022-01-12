@@ -140,6 +140,7 @@ install_chrome_extension "oldceeleldhonbafppcapldpdifcinji" "Grammar and Spell C
 install_chrome_extension "jlmpjdjjbgclbocgajdjefcidcncaied" "daily.dev | The Homepage Developers Deserve"
 install_chrome_extension "cidlcjdalomndpeagkjpnefhljffbnlo" "Toggle JavaScript"
 install_chrome_extension "bhlhnicpbhignbdhedgjhgdocnmhomnp" "ColorZilla"
+install_chrome_extension "jhphiidjkooiaollfiknkokgodbaddcj" "Responsively Helper"
 
 # install Cloudflare Cloud Wrap
 curl https://pkg.cloudflareclient.com/pubkey.gpg | sudo apt-key add -
